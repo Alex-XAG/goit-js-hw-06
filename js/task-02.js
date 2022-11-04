@@ -31,32 +31,14 @@ const ingredients = [
 
 const ingredientsList = document.querySelector("#ingredients");
 
-const itemsVegetable1 = document.createElement("li");
-itemsVegetable1.textContent = "Potatoes";
-itemsVegetable1.classList = "item";
-const itemsVegetable2 = document.createElement("li");
-itemsVegetable2.textContent = "Mushrooms";
-itemsVegetable2.classList = "item";
-const itemsVegetable3 = document.createElement("li");
-itemsVegetable3.textContent = "Garlic";
-itemsVegetable3.classList = "item";
-const itemsVegetable4 = document.createElement("li");
-itemsVegetable4.textContent = "Tomatos";
-itemsVegetable4.classList = "item";
-const itemsVegetable5 = document.createElement("li");
-itemsVegetable5.textContent = "Herbs";
-itemsVegetable5.classList = "item";
-const itemsVegetable6 = document.createElement("li");
-itemsVegetable6.textContent = "Condiments";
-itemsVegetable6.classList = "item";
+const ingredietItems = ingredients.map((ingredient) => {
+  const itemsVegetable = document.createElement("li");
+  itemsVegetable.textContent = ingredient;
+  itemsVegetable.classList = "item";
 
-ingredientsList.append(
-  itemsVegetable1,
-  itemsVegetable2,
-  itemsVegetable3,
-  itemsVegetable4,
-  itemsVegetable5,
-  itemsVegetable6
-);
+  return itemsVegetable;
+});
 
-console.log(ingredientsList);
+ingredientsList.append(...ingredietItems);
+
+console.log(ingredietItems);

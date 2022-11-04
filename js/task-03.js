@@ -36,6 +36,24 @@ const images = [
 //   },
 // ];
 const galleryList = document.querySelector(".gallery");
+
+const makeImage = (image) => {
+  const itemRefs = document.createElement("li");
+  itemRefs.classList.add("item");
+
+  const imageRefs = document.createElement("img");
+  imageRefs.classList.add("image");
+  imageRefs.src = images.map((image) => image.url);
+  imageRefs.alt = images.map((image) => image.alt);
+
+  itemRefs.append(imageRefs);
+  return itemRefs;
+};
+
+//
+
+const imageElements = images.map(makeImage);
+
+console.log(imageElements);
+galleryList.append(...imageElements);
 console.log(galleryList);
-const imageItems = images.map((image) => `<li>${image}</li>`);
-console.log(imageItems);
