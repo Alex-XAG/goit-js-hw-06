@@ -13,6 +13,42 @@ const images = [
   },
 ];
 
+const galleryList = document.querySelector(".gallery");
+
+const makeImage = (image) => {
+  const { url, alt } = image;
+  return `<li class = "item"><img class ="image" src = "${url}" alt = "${alt}"></li>`;
+};
+
+const imageElements = images.map(makeImage).join("");
+
+console.log(imageElements);
+galleryList.insertAdjacentHTML("beforeend", imageElements);
+console.log(galleryList);
+
+// const galleryList = document.querySelector(".gallery");
+
+// const makeImage = (image) => {
+//   const itemRefs = document.createElement("li");
+//   itemRefs.classList.add("item");
+
+//   const imageRefs = document.createElement("img");
+//   imageRefs.classList.add("image");
+//   imageRefs.src = images.map((image) => image.url);
+//   imageRefs.alt = images.map((image) => image.alt);
+
+//   itemRefs.append(imageRefs);
+//   return itemRefs;
+// };
+
+// //
+
+// const imageElements = images.map(makeImage);
+
+// console.log(imageElements);
+// galleryList.append(...imageElements);
+// console.log(galleryList);
+
 // Напиши скрипт для создания галереи изображений по массиву данных. В HTML есть список ul.gallery.
 
 // <ul class="gallery"></ul>
@@ -35,25 +71,3 @@ const images = [
 //     alt: "Group of Horses Running",
 //   },
 // ];
-const galleryList = document.querySelector(".gallery");
-
-const makeImage = (image) => {
-  const itemRefs = document.createElement("li");
-  itemRefs.classList.add("item");
-
-  const imageRefs = document.createElement("img");
-  imageRefs.classList.add("image");
-  imageRefs.src = images.map((image) => image.url);
-  imageRefs.alt = images.map((image) => image.alt);
-
-  itemRefs.append(imageRefs);
-  return itemRefs;
-};
-
-//
-
-const imageElements = images.map(makeImage);
-
-console.log(imageElements);
-galleryList.append(...imageElements);
-console.log(galleryList);
