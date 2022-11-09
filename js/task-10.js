@@ -55,16 +55,3 @@ function getRandomHexColor() {
 //     .toString(16)
 //     .padStart(6, 0)}`;
 // }
-
-// Создай функцию destroyBoxes(), которая очищает содержимое div#boxes,
-//   тем самым удаляя все созданные элементы.
-
-// function logMessage({ type, key, code }) {
-//   const markup = `<div class="log-item">
-//     <span class="chip">${keypressCounter}</span>
-//     <ul>
-//       <li><b>Event</b>: ${type}</li>
-//       <li><b>Key</b>: ${key}</li>
-//       <li><b>Code</b>: ${code}</li>
-//     </ul>
-//   </div>`;
