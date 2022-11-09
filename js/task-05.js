@@ -1,3 +1,14 @@
+const nameInput = document.querySelector("#name-input");
+const salutationName = document.querySelector("#name-output");
+
+nameInput.addEventListener("input", (event) => {
+  salutationName.textContent = event.currentTarget.value;
+  if (salutationName.textContent === "") {
+    salutationName.textContent = "Anonymous";
+  }
+});
+
+
 // Напиши скрипт который, при наборе текста в инпуте input#name - input
 //     (событие input), подставляет его текущее значение в span#name - output.
 //     Если инпут пустой, в спане должна отображаться строка "Anonymous".

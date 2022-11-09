@@ -6,7 +6,7 @@ const incrementBtn = document.querySelector(
   '#counter button[data-action = "increment"]'
 );
 
-function counterValue(currentCounter = 0) {
+function counterValueHandler(currentCounter = 0) {
   decrementBtn.addEventListener("click", () => {
     currentCounter -= 1;
     value.textContent = currentCounter;
@@ -17,7 +17,7 @@ function counterValue(currentCounter = 0) {
   });
 }
 
-counterValue();
+counterValueHandler();
 
 // class Counter {
 //   constructor(selector, initialValue) {
