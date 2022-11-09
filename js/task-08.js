@@ -12,8 +12,12 @@ function loginFormHandler(event) {
   if (email.value === "" || password.value === "") {
     return alert("Please fill in all the fields!");
   }
+  const eventDataObject = {
+    email: email.value,
+    password: password.value,
+  };
+  console.log(eventDataObject);
 
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
   event.currentTarget.reset();
 }
 

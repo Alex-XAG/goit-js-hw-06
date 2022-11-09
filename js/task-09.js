@@ -9,7 +9,7 @@ changeColorBtn.addEventListener("click", changeColorHandler);
 
 function changeColorHandler(event) {
   nameOfColor.textContent = getRandomHexColor();
-  BgColor.style.backgroundColor = getRandomHexColor();
+  BgColor.style.backgroundColor = nameOfColor.textContent;
 }
 
 // Напиши скрипт, который изменяет цвета фона элемента < body > через инлайн стиль при клике на
