@@ -1,3 +1,32 @@
+const boxesContainer = document.querySelector("#boxes");
+const createBtn = document.querySelector("[data-create]");
+const destroyBtn = document.querySelector("[data-destroy]");
+const amountNumber = document.querySelector('[type="number"]');
+console.log(boxesContainer);
+
+createBtn.addEventListener("click", createBoxesHandler);
+destroyBtn.addEventListener("click", destroyBoxesHandler);
+
+function createBoxesHandler() {
+  const amount = amountNumber.value;
+  createBoxes(amount);
+}
+
+function createBoxes(amount) {
+  const firstSize = 30;
+  const fragment = document.createDocumentFragment();
+  for (let i = 0; i < amount; i += 1) {
+    const currentSize = i * 10 + firstSize;
+    const box = document.createElement("div");
+    box.style.cssText = `width: ${currentSize}px; height: ${currentSize}px; background-color: ${getRandomHexColor()}`;
+    fragment.appendChild(box);
+  }
+  boxesContainer.appendChild(fragment);
+}
+
+function destroyBoxesHandler() {
+  boxesContainer.innerHTML = "";
+}
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
